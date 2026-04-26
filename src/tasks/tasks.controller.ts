@@ -45,6 +45,6 @@ export class TasksController {
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param('id') id: string) {
-    this.tasksService.remove(id);
+    return this.tasksService.remove(id);
   }
 }
