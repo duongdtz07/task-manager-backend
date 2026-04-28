@@ -22,6 +22,9 @@ import { TasksModule } from './tasks/tasks.module';
         database: configService.get<string>('DB_NAME'),
         autoLoadEntities: true,
         synchronize: true, // Only for development
+        ssl: {
+          rejectUnauthorized: false,
+        }
       }),
     }),
     TasksModule,
