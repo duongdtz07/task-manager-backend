@@ -17,31 +17,31 @@ import { TasksService } from './tasks.service';
 export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
 
-  // GET /tasks
+  // GET /api/tasks
   @Get()
   findAll() {
     return this.tasksService.findAll();
   }
 
-  // GET /tasks/:id
+  // GET /api/tasks/:id
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.tasksService.findOne(id);
   }
 
-  // POST /tasks
+  // POST /api/tasks
   @Post()
   create(@Body() createTaskDto: CreateTaskDto) {
     return this.tasksService.create(createTaskDto);
   }
 
-  // PATCH /tasks/:id
+  // PATCH /api/tasks/:id
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateTaskDto: UpdateTaskDto) {
     return this.tasksService.update(id, updateTaskDto);
   }
 
-  // DELETE /tasks/:id
+  // DELETE /api/tasks/:id
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param('id') id: string) {
